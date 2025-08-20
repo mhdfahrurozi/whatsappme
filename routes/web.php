@@ -21,4 +21,5 @@ Route::post('/create', [CreateWAController::class, 'store']);
 Route::post('/send', [CreateWAController::class, 'create']);
 Route::get('/', [CreateWAController::class, 'index']);
 Route::get('/URL-Spesial', [CreateWAController::class, 'generate']);
+Route::view('/buaturl', 'buaturl');
 
