@@ -119,7 +119,7 @@ class CreateWAController extends Controller
 
     public function link($code)
     {
-        $link = WhatsAppMe::where('Weburl',  url($code))->first();
+        $link = WhatsAppMe::where('Weburl',  url('link/'.$code))->first();
 
         if (Browser::isDesktop()) {
             if ($link){
