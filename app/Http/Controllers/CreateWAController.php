@@ -81,7 +81,7 @@ class CreateWAController extends Controller
             // $data['email'] = $request->email;
             $data['urlacak'] = $urlacak;
 
-            $data['Weburl'] =  url($request->url);
+            $data['Weburl'] =  url('link/'.$request->url);
 
             //pakai teks atau tidak
             if ($request->teks) {
