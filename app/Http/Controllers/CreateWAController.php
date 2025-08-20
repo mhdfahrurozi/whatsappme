@@ -30,24 +30,24 @@ class CreateWAController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    // public function create(Request $request)
-    // {
-    //     $noWA = '62'.$request->noWA;
-    //     $teks = $request->teks;
+    public function create(Request $request)
+    {
+        $noWA = '62'.$request->noWA;
+        $teks = $request->teks;
 
-    //     if (Browser::isDesktop()) {
-    //         if ($teks){
-    //             return redirect()->to(url('https://web.whatsapp.com/send?phone='.$noWA.'&text='.$teks ));
-    //         }
-    //         return redirect()->to(url('https://web.whatsapp.com/send?phone='.$noWA ));
-    //     } else {
-    //         if ($teks){
-    //             return redirect()->to(url('https://api.whatsapp.com/send?phone='.$noWA.'&text='.$teks ));
-    //         }
-    //         return redirect()->to(url('https://web.whatsapp.com/send?phone='.$noWA ));
-    //     }
+        if (Browser::isDesktop()) {
+            if ($teks){
+                return redirect()->to(url('https://web.whatsapp.com/send?phone='.$noWA.'&text='.$teks ));
+            }
+            return redirect()->to(url('https://web.whatsapp.com/send?phone='.$noWA ));
+        } else {
+            if ($teks){
+                return redirect()->to(url('https://api.whatsapp.com/send?phone='.$noWA.'&text='.$teks ));
+            }
+            return redirect()->to(url('https://web.whatsapp.com/send?phone='.$noWA ));
+        }
 
-    // }
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -117,23 +117,23 @@ class CreateWAController extends Controller
         return redirect()->to(url('/'));
     }
 
-    // public function link($code)
-    // {
-    //     $link = WhatsAppMe::where('Weburl',  url($code))->first();
+    public function link($code)
+    {
+        $link = WhatsAppMe::where('Weburl',  url($code))->first();
 
-    //     if (Browser::isDesktop()) {
-    //         if ($link){
-    //             return redirect()->to(url($link->WA_WEBurl));
-    //         }
-    //         return redirect()->to(url('/'));
-    //     } else {
-    //         if ($link){
-    //             return redirect()->to(url($link->WA_APIurl));
-    //         }
-    //         return redirect()->to(url('/'));
-    //     }
+        if (Browser::isDesktop()) {
+            if ($link){
+                return redirect()->to(url($link->WA_WEBurl));
+            }
+            return redirect()->to(url('/'));
+        } else {
+            if ($link){
+                return redirect()->to(url($link->WA_APIurl));
+            }
+            return redirect()->to(url('/'));
+        }
          
-    // }
+    }
 
     /**
      * Show the form for editing the specified resource.
