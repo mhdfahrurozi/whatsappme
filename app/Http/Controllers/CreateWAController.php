@@ -112,7 +112,7 @@ class CreateWAController extends Controller
 
         if ($cek > 0){
             return view('success',compact('myWA'));
-            // return $myWA;
+            // return $myWA;/
         }
         return redirect()->to(url('/'));
     }
