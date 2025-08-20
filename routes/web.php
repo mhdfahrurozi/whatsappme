@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\CreateWAController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CreateWAController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,10 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/{code}', [CreateWAController::class, 'link']);
+// Route::get('/{code}', [CreateWAController::class, 'link']);
 Route::get('/YourLink/{urlacak}', [CreateWAController::class, 'show']);
 Route::post('/create', [CreateWAController::class, 'store']);
-Route::post('/send', [CreateWAController::class, 'create']);
+// Route::post('/send', [CreateWAController::class, 'create']);
 Route::get('/', [CreateWAController::class, 'index']);
 Route::get('/URL-Spesial', [CreateWAController::class, 'generate']);
 Route::view('/buaturl', 'buaturl');
